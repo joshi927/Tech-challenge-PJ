@@ -165,7 +165,7 @@ const updateUI = async () => {
       const { name = "", picture, email = "",email_verified  } = user;
       eachElement(".profile-image", (e) => (e.src = picture));
       eachElement(".user-name", (e) => (e.innerText = name));
-      eachElement(".email-verified", (e) => (e.innerText = email_verified == true? "verified": "Email is not verified"));
+      eachElement(".email-verified", (e) => (e.innerText = email_verified == true? "": "Email is not verified"));
 
       eachElement(
         ".user-email",

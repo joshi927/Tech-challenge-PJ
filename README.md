@@ -1,37 +1,23 @@
-# Auth0 SPA (Vanilla JS) Account Linking Sample
+Demo Application for Cruise0
 
-This Single Page App serves as an example of the [User Initiated Account Linking Scenario](https://auth0.com/docs/link-accounts/user-initiated), where the user can click on a **Link Account** button and login with other identity to link to.
+This app was designed to meet the instructions based out of the technical challenge
 
-The sample use the [default iframe implementation](https://auth0.com/docs/api-auth/tutorials/silent-authentication#renew-expired-tokens) of auth0-spa-js for silent authentication, which requires 3rd party cookies to be enabled. The following warning message will be logged if 3rd party cookies are disabled.
+Show how Auth0 can support the Cruise0 app modernization on ReactJS (you are free to build the PoC single page application in your preferred language for demonstration purposes).
+✅ The Quickstart templates for Auth0 are available in the main admin screen. I built this one off the Vanilla JS template, and later on changed to client side implementation and used the Github link in the document.
+https://auth0.com/docs/manage-users/user-accounts/user-account-linking/user-initiated-account-linking-client-side-implementation
 
-```
-Silent authentication failed with *login_required* error. This is possibly due to 3rd party cookies blocked in the browser.
-Considering using a custom domain or refresh_token mode of the SDK.
-```
+Show how a new customer can sign up, and how an existing customer can sign in with email/password, and Google.
+✅ This app uses of Auth0's Social Identity Providers feature, using Auth0's default credentials for Google apps, set up via the Auth0 Dashboard. Account linking feature has been enabled to address duplicate accounts.
 
-You can switch to use a [custom domain](https://auth0.com/docs/custom-domains) or [rotating refresh_token](https://github.com/auth0/auth0-spa-js#refresh-tokens) option of the SDK if 3rd parties are disabled in your environment.
+Ensure that customers who login with username/password and Google, with the same email address, will be treated as the same user. 
+✅ This app implements Account Linking via client side implementation and address Account linking feature for duplicate accounts.
+The application should display an error if the customer’s email address is not verified.
+✅ The customer email address verification status is fetched using /api/V2/users. 
 
-**For security reasons, the user performing the account linking and the account being linked must both have email_verified set to true. The sample will enforce this constrain during account linking.**
+Use the New Universal Login for the Authentication Experience and customize it with a Cruise Ship logo, title of “Welcome Aboard”, and description of “Log in to book your travel with Cruise0”.
 
-## Key Features
+✅ The customised login page includes the title “Welcome Aboard” and a description of “Log in to book your travel with Cruise0”. 
 
-- Login with any available connection using [Universal Login](https://auth0.com/docs/universal-login)
-- Display of current profile and already linked accounts
-- Option to unlink an account
-- Option to link another account
+The New Universal Login prompt should also feature a background of a Cruise Ship to meet the Marketing Teams objectives.
+✅ The Marketing Teams objectives have been met with background and logo changes. 
 
-![](pngs/spa-account-linking.png)
-
-## Install Locally
-
-1. Make a copy of `auth_config.json.example` and rename it to `auth_config.json`. Then open it in a text editor and supply the client_id and domain values for your application. You can get the client_id and domain from the [Auth0 Dashboard](https://manage.auth0.com).
-2. In your App's configuration on the [Auth0 Dashboard](https://manage.auth0.com), add `http://localhost:3000` to the list of **Allowed Callback URLs**, **Allowed Logout URLs** and **Allowed Web Origins**.
-
-3. From the SPA folder, run:
-
-```
-- npm install
-- npm start
-```
-
-4. Go to the [index page](http://localhost:3000) and start playing with the app!

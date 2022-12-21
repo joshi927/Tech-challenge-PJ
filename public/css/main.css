@@ -9,3 +9,22 @@ label {
 .navbar {
   min-height: 115px;
 }
+
+.container{
+  max-width: 100% !important;
+  margin-right: 80px;
+}
+
+.navbar-brand{
+ margin-right: 20px !important;
+}
+
+.banner-text{
+  background-color: rgb(123, 205, 243);
+  text-align: center;
+  padding: 100px;
+}
+
+.nopadding{
+  padding: 0 !important;
+}
